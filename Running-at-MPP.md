@@ -32,8 +32,8 @@ To make the typical ML software stack available in your notebooks, the associate
     module('load', 'nccl/2.4.8')
     module('load', 'tensorflow/gpu/2.1.0')
     module('load', 'tensorboard/2.1.0')
-    module('load', 'tensorboard/2.1.0')
     module('load', 'scikit-learn/0.21.2')
+    module('load', 'keras/2.3.1')
 
 On the long run, it is probably more comfortably to load these module automatically when a Jupyter notebook is started. This can be done during the "Intitialize Remote Visualization" step by adding the following to the default modules for JN sessions (set checkmark to the field)
 
@@ -42,8 +42,8 @@ On the long run, it is probably more comfortably to load these module automatica
     nccl/2.4.8
     tensorflow/gpu/2.1.0
     tensorboard/2.1.0
-    tensorboard/2.1.0
     scikit-learn/0.21.2
+    keras/2.3.1
 
 Then the `module(..)` commands above have not to be added anymore to the notebooks.
 
