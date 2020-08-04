@@ -54,4 +54,22 @@ The repo needs to be checked out on the HPC system used (e.g. DRACO). This can b
     git clone -b tf-2.1 https://github.com/drekkano/LMU_DA_ML_19Adv.git
     
 ## Running on the Input Nodes of the Linux Cluster
-To be added ...
+Less work-intensive is to run on one of the input nodes at RZG, such as `mppui4`. You need to load anaconda there and create a conda environment with the required packages
+
+    module load anaconda/3/2019.10
+    conda create --name ML
+    conda activate ML
+    conda install tensorflow matplotlib pandas scikit-learn seaborn numpy
+
+As in the first option, the repository has of course to be checked out
+
+    git clone -b tf-2.1 https://github.com/drekkano/LMU_DA_ML_19Adv.git
+    
+
+It may be comfortable to make the environment just created available in general for jupyter (i.e. even if the jupyter session is not started from the "ML" environment). This can be achieved, following [https://stackoverflow.com/questions/39604271/conda-environments-not-showing-up-in-jupyter-notebook](these) instructions, 
+by installing the `ipykernel` package in the "ML" conda environment and manually add the kernel via
+
+    conda install ipykernel
+    python -m ipykernel install --user --name ML --display-name "ML"
+    
+    
